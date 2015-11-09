@@ -1,0 +1,27 @@
+.rw__items {
+	margin: 0;
+}
+
+.rw__items > li > a {
+	padding: 7px 14px;
+}
+
+.rw-options__item {
+	float: left;
+	width: 350px;
+	margin: 0 20px 20px 0;
+	background: #f5f5f5;
+	padding: 10px;
+	border: 1px solid #eee;
+}
+
+.rw-options__item h4 {
+	font-size: 18px;
+	line-height: 18px;
+	margin: 0 0 10px;
+}
+
+.rw-options__item input,
+.rw-options__item textarea {
+	margin-bottom: 10px;
+}
