@@ -69,7 +69,9 @@
 					{if !$member}
 						<b>{lang key='author'}:</b> <input type="text" name="review_author" value="Guest">
 					{/if}
-					<textarea name="review_comment" class="input-block-level" rows="5"></textarea>
+					<div class="form-group">
+						<textarea name="review_comment" class="input-block-level form-control" rows="5"></textarea>
+					</div>
 					<button type="submit" class="btn btn-info btn-mini"><i class="icon-comment"></i> {lang key='comment'}</button>
 					<button type="button" class="btn btn-danger btn-mini" onclick="toggle_div('form',{$entry.id})"><i class="icon-minus-sign"></i> {lang key='cancel'}</button>
 				</form>
