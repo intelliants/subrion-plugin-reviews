@@ -222,6 +222,15 @@ div.star-rating{background:transparent!important;overflow:hidden!important; marg
 	margin-top: 10px;
 }
 
+.reviews__item__comment-form .form-group {
+	margin-top: 15px;
+}
+
+.reviews__item__comment-form input[name="review_author"] {
+	margin-left: 5px;
+	padding-left: 5px;
+}
+
 .reviews__item__comments {
 	margin-left: 56px;
 	margin-top: 20px;
@@ -255,4 +264,12 @@ div.star-rating{background:transparent!important;overflow:hidden!important; marg
 	font-style: italic;
 	font-weight: normal;
 	color: #bbb;
+}
+
+
+/* RECENT REVIEWS BLOCK */
+
+#block_recent_reviews hr {
+	margin-top: 15px;
+	margin-bottom: 15px;
 }

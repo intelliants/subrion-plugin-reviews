@@ -5,7 +5,7 @@
 	<author>Intelliants LLC</author>
 	<contributor>Intelliants LLC</contributor>
 	<version>4.0.0</version>
-	<date>2016-01-11</date>
+	<date>2016-01-12</date>
 	<compatibility>4.0</compatibility>
 
 	<actions>
@@ -100,8 +100,7 @@
 	</config>
 
 	<blocks>
-		<block name="recent_reviews" title="Recent Reviews" collapsible="1" position="right" type="smarty"
-			filename="block.recent-reviews"><![CDATA[]]></block>
+		<block name="recent_reviews" title="Recent Reviews" collapsible="1" position="right" type="smarty" filename="block.recent-reviews"><![CDATA[]]></block>
 	</blocks>
 
 	<hooks>

@@ -28,9 +28,9 @@
 					</div>
 				{/foreach}
 			</div>
-			<textarea name="text" class="input-block-level form-control" rows="5"></textarea>
+			<textarea name="text" class="form-control" rows="5"></textarea>
 		</div>
-		<button type="submit" class="btn btn-small btn-primary" name="data-review">{lang key='post_review'}</button>
+		<button type="submit" class="btn btn-sm btn-primary" name="data-review">{lang key='post_review'}</button>
 	</form>
 </div>
 

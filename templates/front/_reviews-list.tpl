@@ -22,7 +22,7 @@
 						<a href="{ia_url type='url' item='members' data=$entry}">{$entry.fullname}</a>
 					</p>
 				{/if}
-					
+
 				<div class="reviews__item__rating">
 					{foreach $entry.review_rates|unserialize as $key => $rate}
 						<div class="reviews__item__rating__i clearfix">
@@ -35,7 +35,7 @@
 				</div>
 			</div>
 			<div class="reviews__item__text">
-				{$entry.review_text}
+				{$entry.review_text|escape:'html'|nl2br}
 			</div>
 
 			<div class="reviews__item__info">
@@ -43,10 +43,10 @@
 				{if !$owned}
 					<span class="reviews__item__likes">
 						<a href="#" class="like" data-itemid="{$entry.id}" title="{lang key='review_like'}">
-							<i class="icon-thumbs-up"></i> <span>{$entry.likes}</span>
+							<span class="fa fa-thumbs-up"></span> <span>{$entry.likes}</span>
 						</a>
 						<a href="#" class="dislike" data-itemid="{$entry.id}" title="{lang key='review_dislike'}">
-							<i class="icon-thumbs-down"></i> <span>{$entry.dislikes}</span>
+							<span class="fa fa-thumbs-down"></span> <span>{$entry.dislikes}</span>
 						</a>
 					</span>
 				{/if}
@@ -57,7 +57,7 @@
 				{/if}
 				{if $reviewsSettings.comment_allowed}
 					<a class="add-comment pull-right" href="javascript:;" onclick="toggle_div('form',{$entry.id})">
-						<i class="icon-comment"></i> {lang key='post_comment'}
+						<span class="fa fa-comment"></span> {lang key='post_comment'}
 					</a>
 				{/if}
 			</div>
@@ -67,13 +67,13 @@
 					<input type="hidden" value="{$entry.id}" name="review_id">
 					<input type="hidden" value="" name="review_type" id="review_type_{$entry.id}">
 					{if !$member}
-						<b>{lang key='author'}:</b> <input type="text" name="review_author" value="Guest">
+						<b>{lang key='author'}:</b> <input type="text" name="review_author" value="Guest" disabled="disabled">
 					{/if}
 					<div class="form-group">
-						<textarea name="review_comment" class="input-block-level form-control" rows="5"></textarea>
+						<textarea name="review_comment" class="form-control" rows="5"></textarea>
 					</div>
-					<button type="submit" class="btn btn-info btn-mini"><i class="icon-comment"></i> {lang key='comment'}</button>
-					<button type="button" class="btn btn-danger btn-mini" onclick="toggle_div('form',{$entry.id})"><i class="icon-minus-sign"></i> {lang key='cancel'}</button>
+					<button type="submit" class="btn btn-info btn-xs"><span class="fa fa-comment"></span> {lang key='comment'}</button>
+					<button type="button" class="btn btn-danger btn-xs" onclick="toggle_div('form',{$entry.id})"><span class="fa fa-minus-circle"></span> {lang key='cancel'}</button>
 				</form>
 			</div>
 
