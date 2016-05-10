@@ -48,14 +48,16 @@ class iaBackendController extends iaAbstractControllerPluginBackend
 	{
 		$this->_iaCore->factory('users');
 
-		$sql = 'SELECT :columns, m.`fullname` `author` '
-			. 'FROM `:prefix:table_reviews` r '
+		$sql = 'SELECT :columns, m.`fullname` `author`, rev.`item_url`, rev.`item_title` '
+			. 'FROM `:prefix:table_reviews_clicks` r '
 			. 'LEFT JOIN `:prefix:table_members` m ON (r.`member_id` = m.`id`) '
+			. 'LEFT JOIN `:prefix:table_reviews` rev ON (r.`review_id` = rev.`id`) '
 			. ($where ? 'WHERE ' . $where . ' ' : '') . $order . ' '
 			. 'LIMIT :start, :limit';
 		$sql = iaDb::printf($sql, array(
 			'prefix' => $this->_iaDb->prefix,
-			'table_reviews' => $this->getTable(),
+			'table_reviews_clicks' => $this->getTable(),
+			'table_reviews' => 'reviews',
 			'table_members' => iaUsers::getTable(),
 			'columns' => $columns,
 			'start' => $start,

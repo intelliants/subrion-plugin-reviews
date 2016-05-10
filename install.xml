@@ -33,6 +33,7 @@
 		<phrase category="admin" key="dislikes">Dislikes</phrase>
 		<phrase category="admin" key="enable_reviews_for">Enable Reviews for</phrase>
 		<phrase category="admin" key="guest">Guest</phrase>
+		<phrase category="admin" key="item_url">Item URL</phrase>
 		<phrase category="admin" key="likes">Likes</phrase>
 		<phrase category="admin" key="option">Option</phrase>
 		<phrase category="admin" key="review_allow">Allow to post review</phrase>
