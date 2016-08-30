@@ -1,5 +1,28 @@
 <?php
-//##copyright##
+/******************************************************************************
+ *
+ * Subrion - open source content management system
+ * Copyright (C) 2016 Intelliants, LLC <http://www.intelliants.com>
+ *
+ * This file is part of Subrion.
+ *
+ * Subrion is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Subrion is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Subrion. If not, see <http://www.gnu.org/licenses/>.
+ *
+ *
+ * @link http://www.subrion.org/
+ *
+ ******************************************************************************/
 
 class iaBackendController extends iaAbstractControllerPluginBackend
 {
@@ -25,14 +48,16 @@ class iaBackendController extends iaAbstractControllerPluginBackend
 	{
 		$this->_iaCore->factory('users');
 
-		$sql = 'SELECT :columns, m.`fullname` `author` '
-			. 'FROM `:prefix:table_reviews` r '
+		$sql = 'SELECT :columns, m.`fullname` `author`, rev.`item_url`, rev.`item_title` '
+			. 'FROM `:prefix:table_reviews_clicks` r '
 			. 'LEFT JOIN `:prefix:table_members` m ON (r.`member_id` = m.`id`) '
+			. 'LEFT JOIN `:prefix:table_reviews` rev ON (r.`review_id` = rev.`id`) '
 			. ($where ? 'WHERE ' . $where . ' ' : '') . $order . ' '
 			. 'LIMIT :start, :limit';
 		$sql = iaDb::printf($sql, array(
 			'prefix' => $this->_iaDb->prefix,
-			'table_reviews' => $this->getTable(),
+			'table_reviews_clicks' => $this->getTable(),
+			'table_reviews' => 'reviews',
 			'table_members' => iaUsers::getTable(),
 			'columns' => $columns,
 			'start' => $start,

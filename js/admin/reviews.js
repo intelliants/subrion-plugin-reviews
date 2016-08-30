@@ -6,6 +6,9 @@ Ext.onReady(function()
 			'selection',
 			{name: 'review_text', title: _t('review_text'), width: 1, editor: 'text-wide'},
 			{name: 'item', title: _t('item'), width: 100},
+			{name: 'item_url', title: _t('item_url'), renderer: function(value, metadata, record) {
+				return '<a href="' + value + '/" target="_blank">' + record.data.item_title + '</a>';
+			}, width: 150},
 			{name: 'author', title: _t('author'), width: 150},
 			{name: 'comments', title: _t('comments'), width: 60},
 			{name: 'likes', title: _t('likes'), width: 60},
@@ -23,6 +26,7 @@ Ext.onReady(function()
 			'delete'
 		],
 		sorters: [{property: 'date_added', direction: 'DESC'}],
+		fields: ['item_title'],
 		statuses: ['active', 'approval'],
 		texts: {
 			delete_multiple: _t('are_you_sure_to_delete_selected_reviews'),

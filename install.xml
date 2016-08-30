@@ -4,9 +4,9 @@
 	<summary>Plugin allows visitors to review listings.</summary>
 	<author>Intelliants LLC</author>
 	<contributor>Intelliants LLC</contributor>
-	<version>3.2.0</version>
-	<date>2015-01-30</date>
-	<compatibility>3.2.5</compatibility>
+	<version>4.0.0</version>
+	<date>2016-01-12</date>
+	<compatibility>4.0</compatibility>
 
 	<actions>
 		<action name="reviews" url="reviews/" icon="list" pages="reviews_settings">Reviews</action>
@@ -33,6 +33,7 @@
 		<phrase category="admin" key="dislikes">Dislikes</phrase>
 		<phrase category="admin" key="enable_reviews_for">Enable Reviews for</phrase>
 		<phrase category="admin" key="guest">Guest</phrase>
+		<phrase category="admin" key="item_url">Item URL</phrase>
 		<phrase category="admin" key="likes">Likes</phrase>
 		<phrase category="admin" key="option">Option</phrase>
 		<phrase category="admin" key="review_allow">Allow to post review</phrase>
@@ -100,8 +101,7 @@
 	</config>
 
 	<blocks>
-		<block name="recent_reviews" title="Recent Reviews" collapsible="1" position="right" type="smarty"
-			filename="block.recent-reviews"><![CDATA[]]></block>
+		<block name="recent_reviews" title="Recent Reviews" collapsible="1" position="right" type="smarty" filename="block.recent-reviews"><![CDATA[]]></block>
 	</blocks>
 
 	<hooks>
@@ -232,11 +232,6 @@ CREATE TABLE `{prefix}reviews_comments` (
 		</sql>
 		<code>
 			<![CDATA[
-// 3.2.5 version adaptation mod. Should be removed once the 3.2.6 and higher core released
-$iaCore = &$this->iaCore;
-$iaDb = &$iaCore->iaDb;
-//
-
 $iaItem = $iaCore->factory('item');
 $iaReview = $iaCore->factoryPlugin('reviews', 'common', 'review');
 
