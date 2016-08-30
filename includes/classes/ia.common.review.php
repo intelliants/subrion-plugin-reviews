@@ -1,7 +1,7 @@
 <?php
 //##copyright##
 
-class iaReview extends abstractCore // needs to be abstractPlugin once the iaGrid excluded from it
+class iaReview extends abstractPlugin
 {
 	const PLUGIN_NAME = 'reviews';
 

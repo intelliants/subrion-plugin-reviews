@@ -101,7 +101,7 @@
 
 	<blocks>
 		<block name="recent_reviews" title="Recent Reviews" collapsible="1" position="right" type="smarty"
-			filename="plugin:reviews:block.recent-reviews.tpl"><![CDATA[]]></block>
+			filename="block.recent-reviews"><![CDATA[]]></block>
 	</blocks>
 
 	<hooks>
