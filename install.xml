@@ -155,7 +155,7 @@ CREATE TABLE `{prefix}reviews` (
 	`item_url` varchar(100) NOT NULL,
 	`ratings` tinytext NOT NULL,
 	PRIMARY KEY (`id`),
-	KEY `ITEMID` (`item_id`)
+	UNIQUE KEY `ITEM` (`item_type`, `item_id`)
 ) {mysql_version};
 			]]>
 		</sql>
