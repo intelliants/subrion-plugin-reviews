@@ -59,7 +59,7 @@ class iaBackendController extends iaAbstractControllerPluginBackend
 		$iaPage = $this->_iaCore->factory('page', iaCore::ADMIN);
 		$parentPage = $iaPage->getByName('reviews');
 
-		iaBreadcrumb::preEnd($parentPage['title'], IA_ADMIN_URL . $parentPage['alias']);
+		iaBreadcrumb::preEnd(iaLanguage::get('page_title_' . $parentPage['name']), IA_ADMIN_URL . $parentPage['alias']);
 
 		if (isset($_POST['data-settings']))
 		{
