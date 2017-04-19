@@ -1,263 +1,264 @@
 <?xml version="1.0" encoding="utf-8"?>
-<plugin name="reviews">
-	<title>Reviews</title>
-	<summary>Plugin allows visitors to review listings.</summary>
-	<author>Intelliants LLC</author>
-	<contributor>Intelliants LLC</contributor>
-	<version>4.0.0</version>
-	<date>2016-01-12</date>
-	<compatibility>4.0</compatibility>
+<module type="plugin" name="reviews">
+    <title>Reviews</title>
+    <summary>Plugin allows visitors to review listings.</summary>
+    <author>Intelliants LLC</author>
+    <contributor>Intelliants LLC</contributor>
+    <version>4.1.0</version>
+    <date>2017-04-19</date>
+    <compatibility>4.1</compatibility>
 
-	<actions>
-		<action name="reviews" url="reviews/" icon="list" pages="reviews_settings">Reviews</action>
-		<action name="reviews_settings" url="reviews/settings/" icon="wrench" pages="reviews">Settings</action>
-	</actions>
+    <actions>
+        <action name="reviews" url="reviews/" icon="list" pages="reviews_settings">Reviews</action>
+        <action name="reviews_settings" url="reviews/settings/" icon="wrench" pages="reviews">Settings</action>
+    </actions>
 
-	<adminpages>
-		<page name="reviews" url="reviews/" menus="menu" filename="reviews">Reviews</page>
-		<page name="reviews_settings" url="reviews/settings/" filename="settings">Settings</page>
-		<page name="reviews_comments" url="reviews/comments/" filename="comments">Comments</page>
-	</adminpages>
+    <adminpages>
+        <page name="reviews" url="reviews/" menus="menu" filename="reviews">Reviews</page>
+        <page name="reviews_settings" url="reviews/settings/" filename="settings">Settings</page>
+        <page name="reviews_comments" url="reviews/comments/" filename="comments">Comments</page>
+    </adminpages>
 
-	<pages>
-		<page name="reviews" service="1" url="reviews/">Reviews</page>
-	</pages>
+    <pages>
+        <page name="reviews" service="1" url="reviews/">Reviews</page>
+    </pages>
 
-	<phrases>
-		<phrase category="admin" key="add_new_option">Add New Option</phrase>
-		<phrase category="admin" key="are_you_sure_to_delete_selected_comment">Are you sure you want to remove this comment?</phrase>
-		<phrase category="admin" key="are_you_sure_to_delete_selected_comments">Are you sure you want to remove selected comments?</phrase>
-		<phrase category="admin" key="are_you_sure_to_delete_selected_review">Are you sure you want to remove this review?</phrase>
-		<phrase category="admin" key="are_you_sure_to_delete_selected_reviews">Are you sure you want to remove selected reviews?</phrase>
-		<phrase category="admin" key="comment_text">Comment body</phrase>
-		<phrase category="admin" key="dislikes">Dislikes</phrase>
-		<phrase category="admin" key="enable_reviews_for">Enable Reviews for</phrase>
-		<phrase category="admin" key="guest">Guest</phrase>
-		<phrase category="admin" key="item_url">Item URL</phrase>
-		<phrase category="admin" key="likes">Likes</phrase>
-		<phrase category="admin" key="option">Option</phrase>
-		<phrase category="admin" key="review_allow">Allow to post review</phrase>
-		<phrase category="admin" key="review_comment_allow">Allow to post comments</phrase>
-		<phrase category="admin" key="review_comments">View comments of the review</phrase>
-		<phrase category="admin" key="review_deleted">Review deleted.</phrase>
-		<phrase category="admin" key="review_rating">Review rate option</phrase>
-		<phrase category="admin" key="review_text">Review text</phrase>
-		<phrase category="admin" key="reviews_config">Reviews Configuration</phrase>
-		<phrase category="admin" key="reviews_item_filter">Reviews item filter</phrase>
+    <phrases>
+        <phrase category="admin" key="add_new_option">Add New Option</phrase>
+        <phrase category="admin" key="are_you_sure_to_delete_selected_comment">Are you sure you want to remove this comment?</phrase>
+        <phrase category="admin" key="are_you_sure_to_delete_selected_comments">Are you sure you want to remove selected comments?</phrase>
+        <phrase category="admin" key="are_you_sure_to_delete_selected_review">Are you sure you want to remove this review?</phrase>
+        <phrase category="admin" key="are_you_sure_to_delete_selected_reviews">Are you sure you want to remove selected reviews?</phrase>
+        <phrase category="admin" key="comment_text">Comment body</phrase>
+        <phrase category="admin" key="dislikes">Dislikes</phrase>
+        <phrase category="admin" key="enable_reviews_for">Enable Reviews for</phrase>
+        <phrase category="admin" key="guest">Guest</phrase>
+        <phrase category="admin" key="item_url">Item URL</phrase>
+        <phrase category="admin" key="likes">Likes</phrase>
+        <phrase category="admin" key="option">Option</phrase>
+        <phrase category="admin" key="review_allow">Allow to post review</phrase>
+        <phrase category="admin" key="review_comment_allow">Allow to post comments</phrase>
+        <phrase category="admin" key="review_comments">View comments of the review</phrase>
+        <phrase category="admin" key="review_deleted">Review deleted.</phrase>
+        <phrase category="admin" key="review_rating">Review rate option</phrase>
+        <phrase category="admin" key="review_text">Review text</phrase>
+        <phrase category="admin" key="reviews_config">Reviews Configuration</phrase>
+        <phrase category="admin" key="reviews_item_filter">Reviews item filter</phrase>
+        <phrase category="admin" key="print_preview">Print preview</phrase>
 
-		<phrase category="common" key="comment">Comment</phrase>
-		<phrase category="common" key="comments">Comments</phrase>
-		<phrase category="common" key="on">on</phrase>
-		<phrase category="common" key="post_comment">Comment review</phrase>
-		<phrase category="common" key="posted_by">Posted by</phrase>
-		<phrase category="common" key="rating">Rating</phrase>
-		<phrase category="common" key="review">Review</phrase>
-		<phrase category="common" key="review_rate">Rate</phrase>
-		<phrase category="common" key="reviews">Reviews</phrase>
+        <phrase category="common" key="comment">Comment</phrase>
+        <phrase category="common" key="comments">Comments</phrase>
+        <phrase category="common" key="on">on</phrase>
+        <phrase category="common" key="post_comment">Comment review</phrase>
+        <phrase category="common" key="posted_by">Posted by</phrase>
+        <phrase category="common" key="rating">Rating</phrase>
+        <phrase category="common" key="review">Review</phrase>
+        <phrase category="common" key="review_rate">Rate</phrase>
+        <phrase category="common" key="reviews">Reviews</phrase>
 
-		<phrase category="frontend" key="already_voted">You have already voted</phrase>
-		<phrase category="frontend" key="close_open_comments">show/hide</phrase>
-		<phrase category="frontend" key="rating_is_empty">Your rating is required.</phrase>
-		<phrase category="frontend" key="review_text_is_empty">Review text is required.</phrase>
-		<phrase category="frontend" key="guests_cant_vote">Guests are not allowed to vote</phrase>
-		<phrase category="frontend" key="post_review">Post Review</phrase>
-		<phrase category="frontend" key="review_added">Review added.</phrase>
-		<phrase category="frontend" key="review_like">Like</phrase>
-		<phrase category="frontend" key="review_dislike">Dislike</phrase>
-		<phrase category="frontend" key="reviews_comment_added">Comment has been added.</phrase>
-		<phrase category="frontend" key="reviews_comment_approval">Comment has been added and will be reviewed by administration.</phrase>
-		<phrase category="frontend" key="sign_in_to_rate">Please sign in to rate.</phrase>
-		<phrase category="frontend" key="vote_accepted">Your vote is accepted</phrase>
-		<phrase category="frontend" key="your_rating">Your rating</phrase>
-	</phrases>
+        <phrase category="frontend" key="already_voted">You have already voted</phrase>
+        <phrase category="frontend" key="close_open_comments">show/hide</phrase>
+        <phrase category="frontend" key="rating_is_empty">Your rating is required.</phrase>
+        <phrase category="frontend" key="review_text_is_empty">Review text is required.</phrase>
+        <phrase category="frontend" key="guests_cant_vote">Guests are not allowed to vote</phrase>
+        <phrase category="frontend" key="post_review">Post Review</phrase>
+        <phrase category="frontend" key="review_added">Review added.</phrase>
+        <phrase category="frontend" key="review_like">Like</phrase>
+        <phrase category="frontend" key="review_dislike">Dislike</phrase>
+        <phrase category="frontend" key="reviews_comment_added">Comment has been added.</phrase>
+        <phrase category="frontend" key="reviews_comment_approval">Comment has been added and will be reviewed by administration.</phrase>
+        <phrase category="frontend" key="sign_in_to_rate">Please sign in to rate.</phrase>
+        <phrase category="frontend" key="vote_accepted">Your vote is accepted</phrase>
+        <phrase category="frontend" key="your_rating">Your rating</phrase>
+    </phrases>
 
-	<configgroup name="reviews">Reviews</configgroup>
+    <configgroup name="reviews">Reviews</configgroup>
 
-	<config group="reviews" type="divider">Rating Configuration</config>
-	<config group="reviews" name="reviews_guests_accepted" type="radio" description="Accept reviews from guests" values="1,0" value="1">0</config>
-	<config group="reviews" name="num_latest_reviews" type="text" description="Number of latest reviews">5</config>
-	<config group="reviews" name="reviews_auto_approval" type="radio" description="Reviews auto approval" values="1,0">0</config>
-	<config group="reviews" name="reviews_comments_auto_approval" type="radio" description="Reviews Comments auto approval" values="1,0">0</config>
+    <config group="reviews" type="divider">Rating Configuration</config>
+    <config group="reviews" name="reviews_guests_accepted" type="radio" description="Accept reviews from guests" values="1,0" value="1">0</config>
+    <config group="reviews" name="num_latest_reviews" type="text" description="Number of latest reviews">5</config>
+    <config group="reviews" name="reviews_auto_approval" type="radio" description="Reviews auto approval" values="1,0">0</config>
+    <config group="reviews" name="reviews_comments_auto_approval" type="radio" description="Reviews Comments auto approval" values="1,0">0</config>
 
-	<config group="email_templates" type="divider" name="reviews_divider" description="Reviews"><![CDATA[]]></config>
-	<config group="email_templates" type="radio" values="1,0" name="reviews_admin_notification" description="New review alerts">1</config>
-	<config group="email_templates" type="text" name="reviews_admin_notification_subject" description="Email Subject">New review added</config>
-	<config group="email_templates" type="textarea" name="reviews_admin_notification_body" description="Email Body">
-		<![CDATA[
+    <config group="email_templates" type="divider" name="reviews_divider" description="Reviews"><![CDATA[]]></config>
+    <config group="email_templates" type="radio" values="1,0" name="reviews_admin_notification" description="New review alerts">1</config>
+    <config group="email_templates" type="text" name="reviews_admin_notification_subject" description="Email Subject">New review added</config>
+    <config group="email_templates" type="textarea" name="reviews_admin_notification_body" description="Email Body">
+        <![CDATA[
 <p>Greetings,</p>
 <p>New review has been posted on your website "{%TITLE%}":</p>
 <p>For more details check the url: <a href="{%URL%}">{%URL%}</a></p>
-		]]>
-	</config>
+        ]]>
+    </config>
 
-	<config group="email_templates" type="radio" values="1,0" name="reviews_comment_admin_notification" description="New review alerts">1</config>
-	<config group="email_templates" type="text" name="reviews_comment_admin_notification_subject" description="Email Subject">New review comment added</config>
-	<config group="email_templates" type="textarea" name="reviews_comment_admin_notification_body" description="Email Body">
-		<![CDATA[
+    <config group="email_templates" type="radio" values="1,0" name="reviews_comment_admin_notification" description="New review alerts">1</config>
+    <config group="email_templates" type="text" name="reviews_comment_admin_notification_subject" description="Email Subject">New review comment added</config>
+    <config group="email_templates" type="textarea" name="reviews_comment_admin_notification_body" description="Email Body">
+        <![CDATA[
 <p>Greetings,</p>
 <p>New comment has been posted on your website "{%TITLE%}":</p>
 <p>For more details check the url: <a href="{%URL%}">{%URL%}</a></p>
-		]]>
-	</config>
+        ]]>
+    </config>
 
-	<blocks>
-		<block name="recent_reviews" title="Recent Reviews" collapsible="1" position="right" type="smarty" filename="block.recent-reviews"><![CDATA[]]></block>
-	</blocks>
+    <blocks>
+        <block name="recent_reviews" title="Recent Reviews" collapsible="1" position="right" type="smarty" filename="block.recent-reviews"><![CDATA[]]></block>
+    </blocks>
 
-	<hooks>
-		<hook name="phpCoreBeforePageDisplay" page_type="front">
-			<![CDATA[
+    <hooks>
+        <hook name="phpCoreBeforePageDisplay" page_type="front">
+            <![CDATA[
 if (iaView::REQUEST_HTML == $iaView->getRequestType())
 {
-	if ($iaView->blockExists('recent_reviews'))
-	{
-		$iaReview = $iaCore->factoryPlugin('reviews', 'common', 'review');
-		$recentReviews = $iaDb->all(iaDb::ALL_COLUMNS_SELECTION, '1 ORDER BY `date_updated` DESC', 0, $iaCore->get('num_latest_reviews'), $iaReview::getTable());
+    if ($iaView->blockExists('recent_reviews'))
+    {
+        $iaReview = $iaCore->factoryPlugin('reviews', 'common', 'review');
+        $recentReviews = $iaDb->all(iaDb::ALL_COLUMNS_SELECTION, '1 ORDER BY `date_updated` DESC', 0, $iaCore->get('num_latest_reviews'), $iaReview::getTable());
 
-		$iaView->assign('recentReviews', $recentReviews);
-	}
+        $iaView->assign('recentReviews', $recentReviews);
+    }
 }
-			]]>
-		</hook>
-		<hook name="phpListingRemoved">
-			<![CDATA[
+            ]]>
+        </hook>
+        <hook name="phpListingRemoved">
+            <![CDATA[
 // here we will remove all the reviews entries corresponding to item
 if ($reviewId = (int)$iaDb->one_bind(iaDb::ID_COLUMN_SELECTION, '`item_type` = :item AND `item_id` = :id',
-	array('item' => $itemName, 'id' => $itemId), 'reviews'))
+    ['item' => $itemName, 'id' => $itemId], 'reviews'))
 {
-	$stmt = iaDb::convertIds($reviewId, 'review_id');
+    $stmt = iaDb::convertIds($reviewId, 'review_id');
 
-	$stmtWhere = iaDb::printf('`click_id` IN (SELECT `id` FROM `:prefixreviews_clicks` WHERE :condition)',
-		array('prefix' => $iaDb->prefix, 'condition' => $stmt));
+    $stmtWhere = iaDb::printf('`click_id` IN (SELECT `id` FROM `:prefixreviews_clicks` WHERE :condition)',
+        ['prefix' => $iaDb->prefix, 'condition' => $stmt]);
 
-	$iaDb->delete($stmtWhere, 'reviews_comments');
+    $iaDb->delete($stmtWhere, 'reviews_comments');
 
-	$iaDb->delete(iaDb::convertIds($reviewId), 'reviews');
-	$iaDb->delete($stmt, 'reviews_clicks');
-	$iaDb->delete($stmt, 'reviews_likes');
+    $iaDb->delete(iaDb::convertIds($reviewId), 'reviews');
+    $iaDb->delete($stmt, 'reviews_clicks');
+    $iaDb->delete($stmt, 'reviews_likes');
 }
-			]]>
-		</hook>
-		<hook name="smartyViewListingBeforeFooter" type="smarty" filename="plugins/reviews/templates/front/hook.view-listing.tpl"><![CDATA[]]></hook>
-		<hook name="phpViewListingBeforeStart" page_type="front" filename="plugins/reviews/includes/hook.view-listing.php"><![CDATA[]]></hook>
-		<hook name="adminDashboardStatistics" page_type="admin"><![CDATA[$items['reviews:reviews'] = 'plugin';]]></hook>
-	</hooks>
+            ]]>
+        </hook>
+        <hook name="smartyViewListingBeforeFooter" page_type="front" type="smarty" filename="hook.view-listing"><![CDATA[]]></hook>
+        <hook name="phpViewListingBeforeStart" page_type="front" filename="hook.view-listing"><![CDATA[]]></hook>
+        <hook name="adminDashboardStatistics" page_type="admin"><![CDATA[$items['reviews:reviews'] = 'plugin';]]></hook>
+    </hooks>
 
-	<install>
-		<sql>
-			<![CDATA[
+    <install>
+        <sql>
+            <![CDATA[
 CREATE TABLE `{prefix}reviews` (
-	`id` int(10) unsigned NOT NULL auto_increment,
-	`date_updated` datetime NOT NULL,
-	`item_type` varchar(30) NOT NULL,
-	`item_id` int(11) unsigned NOT NULL,
-	`item_title` varchar(100) NOT NULL,
-	`item_url` varchar(100) NOT NULL,
-	`ratings` tinytext NOT NULL,
-	PRIMARY KEY (`id`),
-	UNIQUE KEY `ITEM` (`item_type`, `item_id`)
+    `id` int(10) unsigned NOT NULL auto_increment,
+    `date_updated` datetime NOT NULL,
+    `item_type` varchar(30) NOT NULL,
+    `item_id` int(11) unsigned NOT NULL,
+    `item_title` varchar(100) NOT NULL,
+    `item_url` varchar(100) NOT NULL,
+    `ratings` tinytext NOT NULL,
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `ITEM` (`item_type`, `item_id`)
 ) {mysql_version};
-			]]>
-		</sql>
-		<sql>
-			<![CDATA[
+            ]]>
+        </sql>
+        <sql>
+            <![CDATA[
 CREATE TABLE `{prefix}reviews_clicks` (
-	`id` int(11) unsigned NOT NULL auto_increment,
-	`status` enum('active', 'approval') NOT NULL default 'active',
-	`date_added` datetime NOT NULL,
-	`review_id` int(10) unsigned NOT NULL,
-	`member_id` mediumint(8) unsigned NOT NULL,
-	`session_id` char(32) NOT NULL,
-	`item` char(30) NOT NULL,
-	`likes` mediumint(8) unsigned NOT NULL,
-	`dislikes` mediumint(8) unsigned NOT NULL,
-	`comments` mediumint(8) unsigned NOT NULL,
-	`review_rates` tinytext NOT NULL,
-	`review_text` text NOT NULL,
-	PRIMARY KEY (`id`),
-	KEY `REVIEW` (`review_id`)
+    `id` int(11) unsigned NOT NULL auto_increment,
+    `status` enum('active', 'approval') NOT NULL default 'active',
+    `date_added` datetime NOT NULL,
+    `review_id` int(10) unsigned NOT NULL,
+    `member_id` mediumint(8) unsigned NOT NULL,
+    `session_id` char(32) NOT NULL,
+    `item` char(30) NOT NULL,
+    `likes` mediumint(8) unsigned NOT NULL,
+    `dislikes` mediumint(8) unsigned NOT NULL,
+    `comments` mediumint(8) unsigned NOT NULL,
+    `review_rates` tinytext NOT NULL,
+    `review_text` text NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `REVIEW` (`review_id`)
 ) {mysql_version};
-			]]>
-		</sql>
-		<sql>
-			<![CDATA[
+            ]]>
+        </sql>
+        <sql>
+            <![CDATA[
 CREATE TABLE `{prefix}reviews_items` (
-	`id` int(11) unsigned NOT NULL auto_increment,
-	`item` varchar(30) NOT NULL,
-	`review_allowed` tinyint(1) unsigned NOT NULL default 1,
-	`comment_allowed` tinyint(1) unsigned NOT NULL default 1,
-	PRIMARY KEY (`id`),
-	UNIQUE KEY `UNIQUE` (`item`)
+    `id` int(11) unsigned NOT NULL auto_increment,
+    `item` varchar(30) NOT NULL,
+    `review_allowed` tinyint(1) unsigned NOT NULL default 1,
+    `comment_allowed` tinyint(1) unsigned NOT NULL default 1,
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `UNIQUE` (`item`)
 ) {mysql_version};
-			]]>
-		</sql>
-		<sql>
-			<![CDATA[
+            ]]>
+        </sql>
+        <sql>
+            <![CDATA[
 CREATE TABLE `{prefix}reviews_items_options` (
-	`item_id` int(11) unsigned NOT NULL,
-	`order` smallint(5) NOT NULL,
-	`title` varchar(30) NOT NULL,
-	`data` tinytext NOT NULL,
-	KEY `ITEM` (`item_id`)
+    `item_id` int(11) unsigned NOT NULL,
+    `order` smallint(5) NOT NULL,
+    `title` varchar(30) NOT NULL,
+    `data` tinytext NOT NULL,
+    KEY `ITEM` (`item_id`)
 ) {mysql_version};
-			]]>
-		</sql>
-		<sql>
-			<![CDATA[
+            ]]>
+        </sql>
+        <sql>
+            <![CDATA[
 CREATE TABLE `{prefix}reviews_likes` (
-	`id` int(11) unsigned NOT NULL auto_increment,
-	`review_id` int(10) unsigned NOT NULL,
-	`member_id` int(11) unsigned NOT NULL,
-	`session_id` char(32) NOT NULL,
-	`type` enum('like', 'dislike') NOT NULL default 'like',
-	PRIMARY KEY (`id`),
-	KEY `REVIEW` (`review_id`)
+    `id` int(11) unsigned NOT NULL auto_increment,
+    `review_id` int(10) unsigned NOT NULL,
+    `member_id` int(11) unsigned NOT NULL,
+    `session_id` char(32) NOT NULL,
+    `type` enum('like', 'dislike') NOT NULL default 'like',
+    PRIMARY KEY (`id`),
+    KEY `REVIEW` (`review_id`)
 ) {mysql_version};
-			]]>
-		</sql>
-		<sql>
-			<![CDATA[
+            ]]>
+        </sql>
+        <sql>
+            <![CDATA[
 CREATE TABLE `{prefix}reviews_comments` (
-	`id` int(10) unsigned NOT NULL auto_increment,
-	`status` enum('active', 'approval') NOT NULL default 'active',
-	`click_id` int(10) unsigned NOT NULL,
-	`member_id` int(11) unsigned NOT NULL,
-	`session_id` char(32) NOT NULL,
-	`date` timestamp NOT NULL,
-	`body` text NOT NULL,
-	PRIMARY KEY (`id`),
-	KEY `CLICK` (`click_id`)
+    `id` int(10) unsigned NOT NULL auto_increment,
+    `status` enum('active', 'approval') NOT NULL default 'active',
+    `click_id` int(10) unsigned NOT NULL,
+    `member_id` int(11) unsigned NOT NULL,
+    `session_id` char(32) NOT NULL,
+    `date` timestamp NOT NULL,
+    `body` text NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `CLICK` (`click_id`)
 ) {mysql_version};
-			]]>
-		</sql>
-		<code>
-			<![CDATA[
+            ]]>
+        </sql>
+        <code>
+            <![CDATA[
 $iaItem = $iaCore->factory('item');
 $iaReview = $iaCore->factoryPlugin('reviews', 'common', 'review');
 
-$defaultRating = array(
-	'order' => -1,
-	'title' => 'Overall Rating',
-	'data' => '1 of 5' . PHP_EOL . '2 of 5' . PHP_EOL . '3 of 5' . PHP_EOL . '4 of 5' . PHP_EOL . '5 of 5'
-);
+$defaultRating = [
+    'order' => -1,
+    'title' => 'Overall Rating',
+    'data' => '1 of 5' . PHP_EOL . '2 of 5' . PHP_EOL . '3 of 5' . PHP_EOL . '4 of 5' . PHP_EOL . '5 of 5'
+];
 
 foreach ($iaItem->getItemsInfo(true) as $entry)
 {
-	$itemId = $iaDb->insert(array('item' => $entry['item']), null, $iaReview->getTableItems());
-	if ($itemId)
-	{
-		$data = array_merge($defaultRating, array('item_id' => $itemId));
-		$iaDb->insert($data, null, $iaReview->getTableOptions());
-	}
+    $itemId = $iaDb->insert(array('item' => $entry['item']), null, $iaReview->getTableItems());
+    if ($itemId)
+    {
+        $data = array_merge($defaultRating, ['item_id' => $itemId]);
+        $iaDb->insert($data, null, $iaReview->getTableOptions());
+    }
 }
-		 ]]>
-		</code>
-	</install>
+         ]]>
+        </code>
+    </install>
 
-	<uninstall>
-		<sql><![CDATA[
+    <uninstall>
+        <sql><![CDATA[
 DROP TABLE IF EXISTS `{prefix}reviews_items`, `{prefix}reviews`, `{prefix}reviews_items_options`,
 `{prefix}reviews_comments`, `{prefix}reviews_clicks`, `{prefix}reviews_likes`;]]>
-		</sql>
-	</uninstall>
-</plugin>
+        </sql>
+    </uninstall>
+</module>

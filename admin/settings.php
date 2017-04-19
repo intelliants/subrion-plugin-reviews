@@ -2,7 +2,7 @@
 /******************************************************************************
  *
  * Subrion - open source content management system
- * Copyright (C) 2016 Intelliants, LLC <http://www.intelliants.com>
+ * Copyright (C) 2017 Intelliants, LLC <https://intelliants.com>
  *
  * This file is part of Subrion.
  *
@@ -20,65 +20,62 @@
  * along with Subrion. If not, see <http://www.gnu.org/licenses/>.
  *
  *
- * @link http://www.subrion.org/
+ * @link https://subrion.org/
  *
  ******************************************************************************/
 
-class iaBackendController extends iaAbstractControllerPluginBackend
+class iaBackendController extends iaAbstractControllerModuleBackend
 {
-	protected $_name = 'settings';
+    protected $_name = 'settings';
 
-	protected $_processAdd = false;
-	protected $_processEdit = false;
-
-
-	public function __construct()
-	{
-		parent::__construct();
-		$this->setHelper($this->_iaCore->factoryPlugin($this->getPluginName(), 'common', 'review'));
-	}
-
-	protected function _indexPage(&$iaView)
-	{
-		$existItems = $this->getHelper()->getItems();
-		$systemItems = $this->_iaCore->factory('item')->getItemsInfo(true);
-
-		$items = array();
-		foreach ($systemItems as $data)
-		{
-			$items[$data['item']] = in_array($data['item'], $existItems);
-		}
-
-		$itemName = isset($this->_iaCore->requestPath[0]) ? $this->_iaCore->requestPath[0] : key($items);
-
-		if (!isset($items[$itemName]))
-		{
-			return iaView::errorPage(iaView::ERROR_NOT_FOUND);
-		}
-
-		$iaPage = $this->_iaCore->factory('page', iaCore::ADMIN);
-		$parentPage = $iaPage->getByName('reviews');
-
-		iaBreadcrumb::preEnd(iaLanguage::get('page_title_' . $parentPage['name']), IA_ADMIN_URL . $parentPage['alias']);
-
-		if (isset($_POST['data-settings']))
-		{
-			$this->_saveItemSettings($itemName);
-		}
-
-		$settings = $this->getHelper()->getItemSettings($itemName);
+    protected $_processAdd = false;
+    protected $_processEdit = false;
 
 
-		$iaView->assign('itemName', $itemName);
-		$iaView->assign('items', $items);
-		$iaView->assign('settings', $settings);
+    public function __construct()
+    {
+        parent::__construct();
+        $this->setHelper($this->_iaCore->factoryPlugin($this->getModuleName(), 'common', 'review'));
+    }
 
-		$iaView->display('settings');
-	}
+    protected function _indexPage(&$iaView)
+    {
+        $existItems = $this->getHelper()->getItems();
+        $systemItems = $this->_iaCore->factory('item')->getItemsInfo(true);
 
-	private function _saveItemSettings($itemName)
-	{
-		$this->getHelper()->setItemSettings($itemName, $_POST['review_allowed'], $_POST['comment_allowed']);
-		$this->getHelper()->saveItemOptions($itemName, $_POST['title'], $_POST['data']);
-	}
+        $items = [];
+        foreach ($systemItems as $data) {
+            $items[$data['item']] = in_array($data['item'], $existItems);
+        }
+
+        $itemName = isset($this->_iaCore->requestPath[0]) ? $this->_iaCore->requestPath[0] : key($items);
+
+        if (!isset($items[$itemName])) {
+            return iaView::errorPage(iaView::ERROR_NOT_FOUND);
+        }
+
+        $iaPage = $this->_iaCore->factory('page', iaCore::ADMIN);
+        $parentPage = $iaPage->getByName('reviews');
+
+        iaBreadcrumb::preEnd(iaLanguage::get('page_title_' . $parentPage['name']), IA_ADMIN_URL . $parentPage['alias']);
+
+        if (isset($_POST['data-settings'])) {
+            $this->_saveItemSettings($itemName);
+        }
+
+        $settings = $this->getHelper()->getItemSettings($itemName);
+
+
+        $iaView->assign('itemName', $itemName);
+        $iaView->assign('items', $items);
+        $iaView->assign('settings', $settings);
+
+        $iaView->display('settings');
+    }
+
+    private function _saveItemSettings($itemName)
+    {
+        $this->getHelper()->setItemSettings($itemName, $_POST['review_allowed'], $_POST['comment_allowed']);
+        $this->getHelper()->saveItemOptions($itemName, $_POST['title'], $_POST['data']);
+    }
 }
