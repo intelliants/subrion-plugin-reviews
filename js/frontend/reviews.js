@@ -28,7 +28,7 @@ $(function () {
         if (itemId) {
             var action = $(this).hasClass('dislike') ? 'dislike' : 'like';
 
-            $.post(intelli.config.baseurl + 'reviews.json', {action: action, review: itemId}, function (response) {
+            intelli.post(intelli.config.baseurl + 'reviews.json', {action: action, review: itemId}, function (response) {
                 intelli.notifFloatBox({
                     msg: response.message,
                     type: response.error ? 'info' : 'success',
