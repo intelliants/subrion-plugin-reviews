@@ -14,12 +14,12 @@
                         <a href="{ia_url type='url' item='members' data=$entry}">
                             {if $entry.avatar}
                                 {assign avatar $entry.avatar|unserialize}
-                                {printImage imgfile=$avatar.path width=40 class='img-circle pull-left' title=$entry.fullname}
+                                {ia_image file=$avatar width=40 class='img-circle pull-left' title=$entry.fullname}
                             {else}
                                 <img src="{$img}no-avatar.png" width="40" class="img-circle pull-left" alt="">
                             {/if}
                         </a>
-                        <a href="{ia_url type='url' item='members' data=$entry}">{$entry.fullname}</a>
+                        <a href="{ia_url type='url' item='members' data=$entry}">{$entry.fullname|escape}</a>
                     </p>
                 {/if}
 

@@ -7,12 +7,12 @@
             <a href="{ia_url type='url' item='members' data=$member}">
                 {if $member.avatar}
                     {assign avatar $member.avatar|unserialize}
-                    {printImage imgfile=$avatar.path width=40 class='img-circle pull-left' title=$member.fullname}
+                    {ia_image file=$avatar width=40 class='img-circle pull-left' title=$member.fullname}
                 {else}
                     <img src="{$img}no-avatar.png" width="40" class="img-circle pull-left" alt="">
                 {/if}
             </a>
-            <p class="reviews__item__author__name"><a href="{ia_url type='url' item='members' data=$member}">{$member.fullname}</a></p>
+            <p class="reviews__item__author__name"><a href="{ia_url type='url' item='members' data=$member}">{$member.fullname|escape}</a></p>
         {/if}
     </div>
     <form method="post" id="rate_item">
